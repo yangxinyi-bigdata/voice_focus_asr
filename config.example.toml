@@ -1,0 +1,11 @@
+# 复制为 config.local.toml 后填写；config.local.toml 已被 Git 忽略。
+# 请勿把真实 API Key 或个人声纹样本提交到仓库。
+
+[qwen]
+api_key = ""
+model = "qwen-audio-3.1-realtime-plus"
+endpoint = "wss://maas.qianwenaiapi.com/api-ws/v1/realtime"
+
+# 声纹样本必须是公网可访问的 HTTPS URL，16 kHz PCM/WAV，最多 5 个。
+# 不填时 probe-qwen 执行无声纹基线；也可在命令中用 --voiceprint-url 覆盖。
+voiceprint_audio_urls = []
