@@ -63,6 +63,18 @@ def _build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="不按真实时间节流，仅用于协议调试，不用于延迟评测",
     )
+    stereo = subcommands.add_parser(
+        "inspect-stereo",
+        help="检查双领夹麦立体声录音：声道是否分离、用户声音串入目标麦克风的强度",
+    )
+    stereo.add_argument("--audio-file", type=Path, required=True, help="双声道 PCM WAV")
+    stereo.add_argument(
+        "--target-channel",
+        choices=["left", "right"],
+        required=True,
+        help="目标说话人（对话对象）麦克风所在的声道",
+    )
+    stereo.add_argument("--output", type=Path, help="可选 JSON 报告路径")
     return parser
 
 
@@ -144,10 +156,35 @@ def _probe_qwen(args: argparse.Namespace) -> int:
     return 1 if observation.errors else 0
 
 
+def _inspect_stereo(args: argparse.Namespace) -> int:
+    from voice_focus_asr.stereo_check import (
+        ChannelSide,
+        StereoAudio,
+        StereoCheckError,
+        analyze_stereo,
+    )
+
+    try:
+        audio = StereoAudio.load(args.audio_file)
+        report = analyze_stereo(audio, target_channel=ChannelSide(args.target_channel))
+    except StereoCheckError as exc:
+        print(f"错误：{exc}", file=sys.stderr)
+        return 1
+
+    rendered = json.dumps(report.as_dict(), ensure_ascii=False, indent=2)
+    print(rendered)
+    if args.output is not None:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(rendered + "\n", encoding="utf-8")
+    return 1 if report.warnings else 0
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     args = _build_parser().parse_args(argv)
     if args.command == "doctor":
         return _doctor()
     if args.command == "probe-qwen":
         return _probe_qwen(args)
+    if args.command == "inspect-stereo":
+        return _inspect_stereo(args)
     return 2
