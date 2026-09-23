@@ -1,0 +1,15 @@
+case_id	kind	mixture	ref	expected_text
+pos_m75_8011	positive	mixtures/R8002_M8003_MS803_mixture_227.50_236.88.wav	enrolment_speakers/R8002_M8003_MS803_N_SPK8011_72.22_86.04.wav	呃长跑呢 长跑我们选多少 一千米哈男女都行哈 男女都一千就可以
+pos_m85_8031	positive	mixtures/R8004_M8006_MS805_mixture_1713.06_1726.48.wav	enrolment_speakers/R8004_M8006_MS805_N_SPK8031_3.46_11.35.wav	咱们自己建一个对是啊 对 是 哎对对对 咱们排个班儿是 嗯
+pos_m79_8072	positive	mixtures/R8006_M8012_MS803_mixture_177.83_186.62.wav	enrolment_speakers/R8006_M8012_MS803_N_SPK8072_2.96_11.62.wav	对可以八点以后再 八点以后再加一次是吧 嗯 这样每天多倒几回
+pos_m68_8071	positive	mixtures/R8006_M8012_MS803_mixture_925.95_938.15.wav	enrolment_speakers/R8006_M8012_MS803_N_SPK8071_416.81_424.17.wav	再有你停车的地方儿是是首先第一 它是规范停车的地方儿吗 那你不是规范停的地方儿你被划了 你就别找别人儿麻烦了呗
+absent_m85_8011	absent	mixtures/R8004_M8006_MS805_mixture_1713.06_1726.48.wav	enrolment_speakers/R8002_M8003_MS803_N_SPK8011_72.22_86.04.wav	
+absent_m75_8031	absent	mixtures/R8002_M8003_MS803_mixture_227.50_236.88.wav	enrolment_speakers/R8004_M8006_MS805_N_SPK8031_3.46_11.35.wav	
+absent_m79_8031	absent	mixtures/R8006_M8012_MS803_mixture_177.83_186.62.wav	enrolment_speakers/R8004_M8006_MS805_N_SPK8031_3.46_11.35.wav	
+absent_m68_8011	absent	mixtures/R8006_M8012_MS803_mixture_925.95_938.15.wav	enrolment_speakers/R8002_M8003_MS803_N_SPK8011_72.22_86.04.wav	
+swap_m79_8071	swap	mixtures/R8006_M8012_MS803_mixture_177.83_186.62.wav	enrolment_speakers/R8006_M8012_MS803_N_SPK8071_416.81_424.17.wav	
+swap_m68_8072	swap	mixtures/R8006_M8012_MS803_mixture_925.95_938.15.wav	enrolment_speakers/R8006_M8012_MS803_N_SPK8072_2.96_11.62.wav	
+clean_8031	clean	enrolment_speakers/R8004_M8006_MS805_N_SPK8031_3.46_11.35.wav	enrolment_speakers/R8004_M8006_MS805_N_SPK8031_3.46_11.35.wav	
+clean_8011_by_8072	absent	enrolment_speakers/R8002_M8003_MS803_N_SPK8011_72.22_86.04.wav	enrolment_speakers/R8006_M8012_MS803_N_SPK8072_2.96_11.62.wav	
+randref_m85_8031	random_ref	mixtures/R8004_M8006_MS805_mixture_1713.06_1726.48.wav	enrolment_speakers/R8004_M8006_MS805_N_SPK8031_3.46_11.35.wav	咱们自己建一个对是啊 对 是 哎对对对 咱们排个班儿是 嗯
+randref_m79_8072	random_ref	mixtures/R8006_M8012_MS803_mixture_177.83_186.62.wav	enrolment_speakers/R8006_M8012_MS803_N_SPK8072_2.96_11.62.wav	对可以八点以后再 八点以后再加一次是吧 嗯 这样每天多倒几回

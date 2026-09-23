@@ -77,7 +77,7 @@ tests/              # 单元测试
 docs/adr/           # 架构决策
 ```
 
-详细术语见 [CONTEXT.md](./CONTEXT.md)，架构决策见 [docs/adr/0001-separate-speaker-focus-from-asr.md](./docs/adr/0001-separate-speaker-focus-from-asr.md)。
+如果刚接触语音技术，先读 [CONTEXT.md](./CONTEXT.md) 中的术语解释，再看[餐馆与多人环境方案分析](./docs/experiments/target_speaker_options_2026-09-22.md)。架构决策见 [docs/adr/0001-separate-speaker-focus-from-asr.md](./docs/adr/0001-separate-speaker-focus-from-asr.md)。
 
 ## 音频契约
 
