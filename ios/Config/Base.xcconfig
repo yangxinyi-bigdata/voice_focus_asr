@@ -1,0 +1,6 @@
+// 共享构建设置。签名团队因人而异，放在 Git 忽略的 Signing.local.xcconfig 中：
+//
+//   DEVELOPMENT_TEAM = 你的团队 ID
+//
+// 文件不存在时仍可生成工程，只是需要在 Xcode 的 Signing & Capabilities 里手动选择团队。
+#include? "Signing.local.xcconfig"

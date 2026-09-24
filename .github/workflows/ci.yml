@@ -16,3 +16,9 @@ jobs:
       - run: ruff check .
       - run: mypy src
       - run: pytest
+
+  ios-core:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: swift test --package-path ios/VoiceFocusCore

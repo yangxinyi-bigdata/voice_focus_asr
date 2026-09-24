@@ -1,0 +1,51 @@
+name: VoiceFocus
+options:
+  bundleIdPrefix: com.yangxinyi
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+
+packages:
+  VoiceFocusCore:
+    path: VoiceFocusCore
+
+configFiles:
+  Debug: Config/Base.xcconfig
+  Release: Config/Base.xcconfig
+
+targets:
+  VoiceFocus:
+    type: application
+    platform: iOS
+    sources:
+      - VoiceFocus
+    dependencies:
+      - package: VoiceFocusCore
+    info:
+      path: VoiceFocus/Info.plist
+      properties:
+        CFBundleDisplayName: Voice Focus
+        CFBundleShortVersionString: "0.1.0"
+        CFBundleVersion: "1"
+        NSMicrophoneUsageDescription: 需要使用麦克风接收领夹麦的双声道音频，判断谁在说话并按需录音。
+        UIBackgroundModes: [audio]
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+        UILaunchScreen: {}
+        UIRequiresFullScreen: true
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.yangxinyi.voicefocus
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_PREVIEWS: YES
+
+schemes:
+  VoiceFocus:
+    build:
+      targets:
+        VoiceFocus: all
+    run:
+      config: Debug
